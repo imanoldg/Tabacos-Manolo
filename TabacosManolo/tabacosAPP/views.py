@@ -3,7 +3,7 @@ from django.http import HttpResponse, HttpResponseNotFound
 from .models import Distribuidor, Estanco, Cliente
 # Create your views here.
 def index(request):
-    return HttpResponse("Bienvenido a la aplicacion de TabacosManolo")
+    return render(request, 'index.html')
 
 def listaDistribuidores(request):
     distribuidores = Distribuidor.objects.order_by('nombre')
