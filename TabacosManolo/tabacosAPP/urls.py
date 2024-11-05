@@ -4,13 +4,12 @@ from . import views
 urlpatterns = [
     path('', views.index, name = 'listaE'),
 
-    path('listadoClientesConPlantillas/', views.listaClientes, name = 'listaClientesPlantillas'), 
-    path('DetalleClientesConPlantillas/', views.detalleClientes, name = 'detalleClientesPlantillas'),
+    path('listadoClientes/', views.listaClientes, name = 'listaClientes'), 
+    path('DetalleClientes/', views.detalleClientes, name = 'detalleClientes'),
 
-    path('listadoDistribuidoresConPlantillas/', views.listaDistribuidores, name = 'listaDistribuidoresPlantillas'), 
-    path('DetalleDistribuidoresConPlantillas/', views.detalleDistribuidores, name = 'detalleDistribuidoresPlantillas'),
+    path('listadoDistribuidores/', views.listaDistribuidores, name = 'listaDistribuidores'), 
+    path('DetalleDistribuidores/', views.detalleDistribuidores, name = 'detalleDistribuidores'),
 
-    path('listadoEstancosConPlantillas/', views.listaEstancos, name = 'listaEstancosPlantillas'), 
-    path('DetalleEstancosConPlantillas/', views.detalleEstancos, name = 'detalleEstancosPlantillas'),
-
+    path('listadoEstancos/', views.listaEstancos, name = 'listaEstancos'), 
+    path('DetalleEstancos/', views.detalleEstancos, name = 'detalleEstancos'),
 ]
