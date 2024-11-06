@@ -1,3 +1,4 @@
+from django.shortcuts import render, get_object_or_404
 from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseNotFound
 from .models import Distribuidor, Estanco, Cliente
@@ -6,61 +7,32 @@ def index(request):
     return render(request, 'index.html')
 
 def listaDistribuidores(request):
-    distribuidores = Distribuidor.objects.order_by('nombre')
-    nombres_distribuidores = ', '.join([distribuidor.nombre for distribuidor in distribuidores])
-    return HttpResponse(nombres_distribuidores)
+    distribuidor = Distribuidor.objects.order_by('nombre')
+    contexto = {'lista_distribuidores': distribuidor}
+    return render(request, 'listaDistribuidores.html', contexto)
         
 def listaEstancos(request):
-    estancos = Estanco.objects.order_by('nombre')
-    nombres_estancos = ', '.join([estanco.nombre for estanco in estancos])
-    return HttpResponse(nombres_estancos)
+    estanco = Estanco.objects.order_by('nombre')
+    contexto = {'lista_estancos': estanco}
+    return render(request, 'listaEstancos.html', contexto)
 
 def listaClientes(request):
-    clientes = Cliente.objects.order_by('nombre')
-    nombres_clientes = ', '.join([cliente.nombre for cliente in clientes])
-    return HttpResponse(nombres_clientes)
+    cliente = Cliente.objects.order_by('nombre')
+    contexto = {'lista_clientes': cliente}
+    return render(request, 'listaClientes.html', contexto)
 
 def detalleDistribuidores(request, id_distribuidor):
-    try:
-        distribuidor = Distribuidor.objects.get(pk=id_distribuidor)
+    distribuidor = get_object_or_404(Distribuidor, pk=id_distribuidor)
+    contexto = {'distribuidor': distribuidor}
+    return render(request, 'detalleDistribuidores.html', contexto)
 
-        cadenaDeTexto = f"Nombre: {distribuidor.nombre}\n - Pais: {distribuidor.pais}\n - Exportacion: {distribuidor.exportacion}\n"
-
-        if distribuidor.estanco.exists():
-            cadenaDeTexto += f"Estancos:{distribuidor.estanco}\n"
-        else:
-            cadenaDeTexto += "No hay estancos asociados a este distribuidor"
-
-        return HttpResponse(cadenaDeTexto)
-    except Distribuidor.DoesNotExist:
-        return HttpResponseNotFound("Distribuidor no encontrado")
-            
 def detalleEstancos(request, id_estanco):
-    try:
-        estanco = Estanco.objects.get(pk=id_estanco)
-
-        cadenaDeTexto = f"Nombre: {estanco.nombre}\n - Localizacion:{estanco.localizacion}\n"
-
-        if estanco.clientes.exists():
-            cadenaDeTexto += f"Clientes:{estanco.clientes}\n"
-        else:
-            cadenaDeTexto += "No hay clientes asociados a este estanco"
-
-        return HttpResponse(cadenaDeTexto)
-    except Estanco.DoesNotExist:
-        return HttpResponseNotFound("Estanco no encontrado")
+    estanco = get_object_or_404(Estanco, pk=id_estanco)
+    contexto = {'estanco': estanco}
+    return render(request, 'detalleEstancos.html', contexto)
 
 def detalleClientes(request, id_cliente):
-    try:
-        cliente = Cliente.objects.get(pk=id_cliente)
-
-        cadenaDeTexto = f"DNI: {cliente.dni}\n - Nombre:{cliente.nombre}\n - Apellido: {cliente.apellido}\n - Edad: {cliente.edad}"
-
-        if cliente.estanco.exists():
-            cadenaDeTexto += f"Estanco:{cliente.estanco}\n"
-        else:
-            cadenaDeTexto += "No hay un estanco asociado a este cliente"
-
-        return HttpResponse(cadenaDeTexto)
-    except Cliente.DoesNotExist:
-        return HttpResponseNotFound("Cliente no encontrado")
+    cliente = get_object_or_404(Cliente, pk=id_cliente)
+    contexto = {'cliente': cliente}
+    return render(request, 'detalleClientes.html', contexto)
+ 

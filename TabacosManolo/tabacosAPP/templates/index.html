@@ -5,17 +5,9 @@
     <body>
         <h1>Menú Principal</h1>
         <p>Elije una opción:</p>
-        <nav>
-            <table id="tierLists">
-                <thead>
-                    <tr>
-                        <th><a href="{% url 'listaDistribuidores' %}">Lista Distribuidores</a></th>
-                        <th><a href="{% url 'listaClientes' %}">Lista Clientes</a></th>
-                        <th><a href="{% url 'listaEstancos' %}">Lista Estancos</a></th>
-                    </tr>
-                </thead>
-            </table>
-            
-        </nav>
+        <br>
+        <p><a href="{% url 'listaDistribuidores' %}">Lista Distribuidores</a></p>
+        <p><a href="{% url 'listaClientes' %}">Lista Clientes</a></p>
+        <p><a href="{% url 'listaEstancos' %}">Lista Estancos</a></p>
     </body>
 </html>
