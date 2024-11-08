@@ -1,8 +1,13 @@
 <html>
-<head>
-    <title>Lista Distribuidores</title>
-</head>
-<body>
-    
-</body>
+    <head>
+        <title>Lista Distribuidores</title>
+    </head>
+    <body>
+        <h1>Lista de Distribuidores</h1>
+        {% for distribuidor in lista_distribuidores %}
+            <li>
+                <a href="{% url 'detalleDistribuidores' distribuidor.id %}">{{ distribuidor.nombre }}</a>
+            </li>
+        {% endfor %}
+    </body>
 </html>

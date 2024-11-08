@@ -4,6 +4,11 @@
     </head>
 
     <body>
-        
+        <h1>Lista de estancos</h1>
+        {% for estanco in lista_estancos %}
+            <li>
+                <a href="{% url 'detalleEstancos' estanco.id %}">{{ estanco.nombre }}</a>
+            </li>
+        {% endfor %}
     </body>
 </html>

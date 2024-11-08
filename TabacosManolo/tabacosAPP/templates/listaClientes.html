@@ -1,15 +1,14 @@
 <html>
-<head>
-    <title>Lista de Clientes</title>
-</head>
-<body>
-    <h1>Lista de Clientes</h1>
-    {% for cliente in lista_clientes %}
-        <li>
-            <a href="{% url 'detalleClientes' cliente.id %}"></a>
-            {{ cliente.nombre }}
-        </li>
-    {% endfor %}
-    
-</body>
+    <head>
+        <title>Lista de Clientes</title>
+    </head>
+    <body>
+        <h1>Lista de Clientes</h1>
+        {% for cliente in lista_clientes %}
+            <li>
+                <a href="{% url 'detalleClientes' cliente.id %}">{{ cliente.nombre }}</a>
+            </li>
+        {% endfor %}
+        
+    </body>
 </html>
