@@ -5,12 +5,11 @@
     <body>
         {% extends 'base.html' %}
         {% block contenido%}
-        <h1>Detalle de los clientes</h1>
+        <h1>{{ cliente.nombre }} {{ cliente.apellido }}</h1>
         <p>ID: {{ cliente.id }}</p>
-        <p>Nombre: {{ cliente.nombre }}</p>
-        <p>Apellido: {{ cliente.apellido }}</p>
         <p>Edad: {{ cliente.edad }}</p>
         <p>ID_Estanco: {{ cliente.estanco_id }}</p>
+        <img src=" {{cliente.imagenCliente}}" alt="">
         {% endblock%}
     </body>
 </html>

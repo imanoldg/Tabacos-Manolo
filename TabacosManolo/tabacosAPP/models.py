@@ -29,6 +29,7 @@ class Cliente(models.Model):
     apellido = models.CharField(max_length=100)
     edad = models.PositiveIntegerField()
     estanco = models.ForeignKey(Estanco, related_name='clientes', on_delete=models.CASCADE)
+    imagenCliente = models.URLField(max_length=600, null= True, blank= True)
 
     def __str__(self):
         nombreCompleto = self.nombre + ' ' + self.apellido
