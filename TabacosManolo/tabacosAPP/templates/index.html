@@ -3,11 +3,14 @@
         <title>Menú Principal</title>
     </head>
     <body>
+        {% extends 'base.html' %}
+        {% block contenido%}
         <h1>Menú Principal</h1>
         <p>Elije una opción:</p>
         <br>
         <p><a href="{% url 'listaDistribuidores' %}">Lista Distribuidores</a></p>
         <p><a href="{% url 'listaClientes' %}">Lista Clientes</a></p>
         <p><a href="{% url 'listaEstancos' %}">Lista Estancos</a></p>
+        {% endblock %}
     </body>
 </html>

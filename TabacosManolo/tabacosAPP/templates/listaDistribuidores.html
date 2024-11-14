@@ -3,11 +3,14 @@
         <title>Lista Distribuidores</title>
     </head>
     <body>
+        {% extends 'base.html' %}
+        {% block contenido%}
         <h1>Lista de Distribuidores</h1>
         {% for distribuidor in lista_distribuidores %}
             <li>
                 <a href="{% url 'detalleDistribuidores' distribuidor.id %}">{{ distribuidor.nombre }}</a>
             </li>
         {% endfor %}
+        {% endblock %}
     </body>
 </html>

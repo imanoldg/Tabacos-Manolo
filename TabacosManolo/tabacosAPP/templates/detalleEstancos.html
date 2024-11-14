@@ -3,10 +3,13 @@
         <title>Detalle de los Estancos</title>
     </head>
     <body>
+        {% extends 'base.html' %}
+        {% block contenido%}
         <h1>Detalle de los Estancos</h1>
         <p>ID: {{ estanco.id }}</p>
         <p>Nombre: {{ estanco.nombre }}</p>
         <p>Localizacion: {{ estanco.localizacion }}</p>
         <p>ID_Distribuidor: {{ estanco.distribuidor_id }}</p>
+        {% endblock %}
     </body>
 </html>

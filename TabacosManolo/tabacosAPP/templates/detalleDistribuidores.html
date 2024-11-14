@@ -3,10 +3,13 @@
         <title>Detalle de los Distribuidores</title>
     </head>
     <body>
+        {% extends 'base.html' %}
+        {% block contenido%}
         <h1>Detalle de los Distribuidores</h1>
         <p>ID: {{ distribuidor.id }}</p>
         <p>Nombre: {{ distribuidor.nombre }}</p>
         <p>País: {{ distribuidor.pais }}</p>
         <p>Exportación: {{ distribuidor.exportacion }}</p>
+        {% endblock %}
     </body>
 </html>
