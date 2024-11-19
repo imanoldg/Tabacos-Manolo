@@ -11,9 +11,6 @@ class Distribuidor(models.Model):
         return self.nombre
 
 
-    
-
-
 class Estanco(models.Model):
     nombre = models.CharField(max_length=100)
     localizacion = models.CharField(max_length=150)
@@ -35,4 +32,17 @@ class Cliente(models.Model):
         nombreCompleto = self.nombre + ' ' + self.apellido
         return nombreCompleto
 
-    
+class Marca(models.Model):
+    select_tipo = (
+        ('Cigarrillos', 'Cigarrillos'),
+        ('Puros', 'Puros'),
+    )
+
+    nombre = models.CharField(max_length=100)
+    tipo = models.CharField(max_length= 20, choices= select_tipo)
+    estanco = models.ForeignKey(Estanco, related_name='marcas', on_delete=models.CASCADE)
+    distribuidor = models.ForeignKey(Distribuidor, related_name='marca', on_delete=models.CASCADE)
+    imagenMarca = models.URLField(max_length=600, null= True, blank= True)
+
+    def __str__(self):
+        return self.nombre
