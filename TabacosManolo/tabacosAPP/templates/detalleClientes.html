@@ -2,6 +2,7 @@
     <head>
         <title>Detalle de los Clientes</title>
     </head>
+
     <body>
         {% extends 'base.html' %}
         {% block contenido%}
@@ -9,7 +10,20 @@
         <p>ID: {{ cliente.id }}</p>
         <p>Edad: {{ cliente.edad }}</p>
         <p>ID_Estanco: {{ cliente.estanco_id }}</p>
+        {% if cliente.estanco %}
+            <p> - Nombre del Estanco: {{ cliente.estanco.nombre }}</p>
+            <p> - Localización: {{ cliente.estanco.localizacion }}</p>
+
+            <a href="{% url 'detalleEstancos' cliente.estanco.id %}">
+                Ver detalles del estanco
+            </a>
+        {% else %}
+            <p>Este cliente no tiene un estanco asociado.</p>
+        {% endif %}
+        {% if cliente.estanco %}
+            
         <img src=" {{cliente.imagenCliente}}" alt="">
+        {% endif %}
         {% endblock%}
     </body>
 </html>
