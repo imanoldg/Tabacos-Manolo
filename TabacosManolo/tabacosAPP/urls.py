@@ -11,5 +11,8 @@ urlpatterns = [
     path('DetalleDistribuidores/<int:id_distribuidor>/', views.detalleDistribuidores, name='detalleDistribuidores'),  
 
     path('listadoEstancos/', views.listaEstancos, name='listaEstancos'), 
-    path('DetalleEstancos/<int:id_estanco>/', views.detalleEstancos, name='detalleEstancos'),  
+    path('DetalleEstancos/<int:id_estanco>/', views.detalleEstancos, name='detalleEstancos'),
+
+    path('listadoMarcas/', views.listaMarcas, name= 'listaMarcas'),
+    path('DetalleMarcas/ <int: id_marca>/', views.detalleMarcas, name='detalleMarcas'),  
 ]
