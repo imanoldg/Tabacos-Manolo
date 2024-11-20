@@ -20,10 +20,8 @@
         {% else %}
             <p>Este cliente no tiene un estanco asociado.</p>
         {% endif %}
-        {% if cliente.estanco %}
-            
-        <img src=" {{cliente.imagenCliente}}" alt="">
-        {% endif %}
+            <br> <br>
+        <img src=" {{cliente.imagenCliente}}" alt="Foto del cliente">
         {% endblock%}
     </body>
 </html>

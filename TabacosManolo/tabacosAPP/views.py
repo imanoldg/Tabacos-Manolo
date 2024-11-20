@@ -41,7 +41,7 @@ def detalleMarcas(request, id_marca):
     contexto = {'marca': marca}
     return render(request, 'detalleMarcas.html', contexto)
 
-def listaMarcas(request, id_marca):
-    marca = marca.objects.order_by('nombre')
+def listaMarcas(request):
+    marca = Marca.objects.order_by('nombre')
     contexto = {'lista_marcas': marca}
     return render(request, 'listaMarcas.html', contexto)

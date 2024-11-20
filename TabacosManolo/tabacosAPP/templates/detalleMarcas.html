@@ -1,0 +1,41 @@
+<html>
+    <head>
+        <title>Detalle de las Marcas</title>
+    </head>
+    <body>
+        {% extends 'base.html' %}
+        {% block contenido%}
+        <h1>Detalle de las Marcas</h1>
+        <p>ID: {{ marca.id }}</p>
+        <p>Nombre: {{ marca.nombre }}</p>
+        <p>Tipo de Tabaco: {{ marca.tipo }}</p>
+
+        {% if marca.estanco %}
+            <p> - Nombre del Estanco: {{ marca.estanco.nombre }}</p>
+            <p> - Localización: {{ marca.estanco.localizacion }}</p>
+
+            <a href="{% url 'detalleEstancos' marca.estanco.id %}">
+                Ver detalles del estanco
+            </a>
+            <br> <br>
+        {% else %}
+            <p>Esta marca no tiene un estanco asociado.</p>
+        {% endif %}
+
+        {% if marca.distribuidor %}
+            <p> - Nombre del Distribuidor: {{ marca.distribuidor.nombre }}</p>
+            <p> - País: {{ marca.distribuidor.pais }}</p>
+            <p> - Exportación: {{ marca.distribuidor.exportacion }}</p>
+
+            <a href="{% url 'detalleDistribuidores' marca.distribuidor.id %}">
+                Ver detalles del distribuidor
+            </a>
+        {% else %}
+            <p>Esta marca no tiene un distribuidor asociado.</p>
+        {% endif %}
+            <br> <br>
+        <img src=" {{marca.imagenMarca}}" alt="Imagen del logo de la marca">
+        {% endblock %}
+    
+    </body>
+</html>
