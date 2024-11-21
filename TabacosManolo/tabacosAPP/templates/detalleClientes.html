@@ -1,27 +1,33 @@
+{% extends 'base.html' %}
+{% load static %}
 <html>
     <head>
         <title>Detalle de los Clientes</title>
+        <link rel="stylesheet" href="{% static 'style/clientes.css' %}" >
     </head>
 
     <body>
-        {% extends 'base.html' %}
-        {% block contenido%}
-        <h1>{{ cliente.nombre }} {{ cliente.apellido }}</h1>
-        <p>ID: {{ cliente.id }}</p>
-        <p>Edad: {{ cliente.edad }}</p>
-        <p>ID_Estanco: {{ cliente.estanco_id }}</p>
-        {% if cliente.estanco %}
-            <p> - Nombre del Estanco: {{ cliente.estanco.nombre }}</p>
-            <p> - Localización: {{ cliente.estanco.localizacion }}</p>
 
-            <a href="{% url 'detalleEstancos' cliente.estanco.id %}">
-                Ver detalles del estanco
-            </a>
-        {% else %}
-            <p>Este cliente no tiene un estanco asociado.</p>
-        {% endif %}
-            <br> <br>
-        <img src=" {{cliente.imagenCliente}}" alt="Foto del cliente">
+        {% block contenido%}
+        <div id="clienteInfo">
+            <img src=" {{cliente.imagenCliente}}" alt="Foto del cliente">
+            <h1>{{ cliente.nombre }} {{ cliente.apellido }}</h1>
+            <p>Edad: {{ cliente.edad }}</p>
+        </div>
+        <div id="estancoInfo">
+            {% if cliente.estanco %}
+                <ul>
+                    <li>Estanco donde compra: {{ cliente.estanco.nombre }}</li>
+                    <li>Ubicacion del estanco: {{ cliente.estanco.localizacion }}</li>
+                    <li><a href="{% url 'detalleEstancos' cliente.estanco.id %}">
+                        Informacion sobre el estanco
+                    </a></li>
+                </ul>
+            {% else %}
+                <p>Este cliente no compra en ningun estanco.</p>
+            {% endif %}
+        </div>
+
         {% endblock%}
     </body>
 </html>
