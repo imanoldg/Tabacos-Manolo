@@ -12,15 +12,29 @@
     width: 100%;
     height: 200px;
     object-fit: cover;
+    border-radius: 5px;
 }
 
 .marcas .marca .contenedor-marca{
-    background-color: rgb(199, 194, 194);
     width: 80%;
     padding: 10px;
     margin: auto;
 }
 
+.contenedor-marca{
+    border-radius: 10px;
+    text-align: center;
+    background-color: rgba(221, 161, 118, 0.87);
+}
+
+.contenedor-marca h2{
+    color: rgb(23, 18, 22);
+}
+
 .marcas .marca .detalles{
     padding: 5px;
+}
+
+a{
+    text-decoration: none;
 }
