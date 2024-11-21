@@ -1,0 +1,25 @@
+.marcas{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.marcas .marca{
+    width: 25%;
+    margin-top: 15px;
+}
+
+.marcas .marca img{
+    width: 20%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.marcas .marca .contenedor_producto{
+    background-color: white;
+    width: 80%;
+    margin: auto;
+}
+
+.marcas .marca .detalles{
+    padding: 5px;
+}

@@ -1,17 +1,29 @@
+{% extends 'base.html' %}
+{% load static %}
 <html>
     <head>
         <title>Lista Marcas</title>
+        <link rel="stylesheet" type="text/css" href="{% static 'style/marcas.css' %}" />
     </head>
 
-    <body>
-        {% extends 'base.html' %}
+    <body>  
         {% block contenido%}
         <h1>Lista de marcas</h1>
-        {% for marca in lista_marcas %}
-            <li>
-                <a href="{% url 'detalleMarcas' marca.id %}">{{ marca.nombre }}</a>
-            </li>
-        {% endfor %}
+        <div class="marcas">
+            {% for marca in lista_marcas %}
+            <div class="marca">
+
+                <div class="contenedor-marca">
+                    <img src="{{marca.imagenMarca}}" alt="{{marca.nombre}}">
+                    <div class="detalle">
+                        <h2>{{marca.nombre}}</h2>
+                    </div>
+                </div>
+
+            </div>
+            {% endfor %}
+        </div>
         {% endblock %}
+
     </body>
 </html>
