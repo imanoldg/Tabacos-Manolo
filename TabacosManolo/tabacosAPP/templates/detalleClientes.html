@@ -1,14 +1,15 @@
 {% extends 'base.html' %}
 {% load static %}
+<!DOCTYPE html>
 <html>
     <head>
         <title>Detalle de los Clientes</title>
-        <link rel="stylesheet" href="{% static 'style/clientes.css' %}" >
+        <link rel="stylesheet" href="{% static 'style/CSS/clientes.css' %}">
     </head>
 
     <body>
 
-        {% block contenido%}
+        {% block contenido %}
         <div id="clienteInfo">
             <img src=" {{cliente.imagenCliente}}" alt="Foto del cliente">
             <h1>{{ cliente.nombre }} {{ cliente.apellido }}</h1>
@@ -27,7 +28,6 @@
                 <p>Este cliente no compra en ningun estanco.</p>
             {% endif %}
         </div>
-
-        {% endblock%}
+        {% endblock %}
     </body>
 </html>
