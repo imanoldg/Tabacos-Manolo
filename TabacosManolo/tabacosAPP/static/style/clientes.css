@@ -1,0 +1,9 @@
+#clienteInfo{
+    float: left;
+    width: 50%;
+}
+
+#estancoInfo{
+    float: right;
+    width: 50%;
+}
