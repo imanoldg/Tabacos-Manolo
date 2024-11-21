@@ -5,12 +5,33 @@
     <body>
         {% extends 'base.html' %}
         {% block contenido%}
-        <h1>Detalle de las Marcas</h1>
-        <p>ID: {{ marca.id }}</p>
-        <p>Nombre: {{ marca.nombre }}</p>
-        <p>Tipo de Tabaco: {{ marca.tipo }}</p>
+        <h1>{{marca.nombre}}</h1>
+        
+        <div id="imagen">
+            <img src=" {{marca.imagenMarca}}" alt="Imagen del logo de la marca">
+        </div>
 
-        {% if marca.estanco %}
+        <div id="info">
+            <p>Tipo de Tabaco: {{ marca.tipo }}</p>
+
+            {% if marca.distribuidor %}
+                <p> - Nombre del Distribuidor: {{ marca.distribuidor.nombre }}</p>
+                <p> - País: {{ marca.distribuidor.pais }}</p>
+                <p> - Exportación: {{ marca.distribuidor.exportacion }}</p>
+
+                <a href="{% url 'detalleDistribuidores' marca.distribuidor.id %}">
+                    Ver detalles del distribuidor
+                </a>
+            {% else %}
+                <p>Esta marca no tiene un distribuidor asociado.</p>
+            {% endif %}
+        </div>
+
+            <br> <br>
+        
+        <div id="estanco">
+            {% if marca.estanco %}
+            
             <p> - Nombre del Estanco: {{ marca.estanco.nombre }}</p>
             <p> - Localización: {{ marca.estanco.localizacion }}</p>
 
@@ -18,23 +39,12 @@
                 Ver detalles del estanco
             </a>
             <br> <br>
-        {% else %}
+            {% else %}
             <p>Esta marca no tiene un estanco asociado.</p>
-        {% endif %}
+            {% endif %}
+        </div>
 
-        {% if marca.distribuidor %}
-            <p> - Nombre del Distribuidor: {{ marca.distribuidor.nombre }}</p>
-            <p> - País: {{ marca.distribuidor.pais }}</p>
-            <p> - Exportación: {{ marca.distribuidor.exportacion }}</p>
 
-            <a href="{% url 'detalleDistribuidores' marca.distribuidor.id %}">
-                Ver detalles del distribuidor
-            </a>
-        {% else %}
-            <p>Esta marca no tiene un distribuidor asociado.</p>
-        {% endif %}
-            <br> <br>
-        <img src=" {{marca.imagenMarca}}" alt="Imagen del logo de la marca">
         {% endblock %}
     
     </body>
