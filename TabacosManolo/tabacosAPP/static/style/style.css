@@ -98,8 +98,9 @@ ol li
   margin-right: auto;}
 
 #header
-{ background: rgb(158, 133, 104);
-  height: 177px;}
+{ background: transparent url(madera.jpg) no-repeat;
+  height: 177px;
+  width: 100%;}
   
 #banner
 {  background: transparent url(banner.png) no-repeat;
@@ -132,7 +133,7 @@ ol li
   text-decoration: none;}
 
 #logo_text h1 a .logo_colour
-{ color: rgb(191, 42, 52);}
+{ color:rgb(191, 42, 52);}
 
 #logo_text a:hover .logo_colour
 { color: #FFF;}
