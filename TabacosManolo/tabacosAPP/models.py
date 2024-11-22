@@ -46,3 +46,27 @@ class Marca(models.Model):
 
     def __str__(self):
         return self.nombre
+    
+
+class Cigarrillo(models.Model):
+    select_tipo = (
+        ('Industriales', 'Industriales'),
+        ('De liar', 'De liar'),
+    )
+    
+    nombre = models.CharField(max_length=100)
+    tipo = models.CharField(max_length= 20, choices= select_tipo)
+    precio = models.PositiveIntegerField()
+    imagenCig = models.URLField(max_length=600, null= True, blank= True)
+
+    def __str__(self):
+        return self.nombre
+
+class Puro(models.Model):
+    nombre = models.CharField(max_length=100)
+    pais = models.CharField(max_length=100)
+    precio = models.PositiveIntegerField()
+    imagenPuro = models.URLField(max_length=600, null= True, blank= True)
+
+    def __str__(self):
+        return self.nombre
