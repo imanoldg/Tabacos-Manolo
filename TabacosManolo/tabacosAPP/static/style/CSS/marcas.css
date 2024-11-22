@@ -52,7 +52,6 @@
 #imagen{
     width: 30%;
     float: left;
-    background-color: rgb(250, 239, 192);
 }
 
 #info{
@@ -60,6 +59,7 @@
     height: 40%;
     font-size: 17px;
     margin-top: 10px;
+    border-radius: 5px;
 }
 
 #estanco{

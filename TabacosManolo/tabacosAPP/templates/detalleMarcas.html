@@ -7,25 +7,30 @@
         {% block contenido%}
         <h1>{{marca.nombre}}</h1>
         
-        <div id="imagen">
-            <img src=" {{marca.imagenMarca}}" alt="Imagen del logo de la marca">
+
+        <div id="contenedorInfo">
+            <div id="imagen">
+                <img src=" {{marca.imagenMarca}}" alt="Imagen del logo de la marca">
+            </div>
+    
+            <div id="info">
+                <p>Tipo de Tabaco: {{ marca.tipo }}</p>
+    
+                {% if marca.distribuidor %}
+                    <p> - Nombre del Distribuidor: {{ marca.distribuidor.nombre }}</p>
+                    <p> - País: {{ marca.distribuidor.pais }}</p>
+                    <p> - Exportación: {{ marca.distribuidor.exportacion }}</p>
+    
+                    <a href="{% url 'detalleDistribuidores' marca.distribuidor.id %}">
+                        Ver detalles del distribuidor
+                    </a>
+                {% else %}
+                    <p>Esta marca no tiene un distribuidor asociado.</p>
+                {% endif %}
+            </div>
         </div>
 
-        <div id="info">
-            <p>Tipo de Tabaco: {{ marca.tipo }}</p>
-
-            {% if marca.distribuidor %}
-                <p> - Nombre del Distribuidor: {{ marca.distribuidor.nombre }}</p>
-                <p> - País: {{ marca.distribuidor.pais }}</p>
-                <p> - Exportación: {{ marca.distribuidor.exportacion }}</p>
-
-                <a href="{% url 'detalleDistribuidores' marca.distribuidor.id %}">
-                    Ver detalles del distribuidor
-                </a>
-            {% else %}
-                <p>Esta marca no tiene un distribuidor asociado.</p>
-            {% endif %}
-        </div>
+        
 
             <br> <br>
         
