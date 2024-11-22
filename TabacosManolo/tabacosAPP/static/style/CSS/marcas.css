@@ -52,6 +52,7 @@
 #imagen{
     width: 30%;
     float: left;
+    background-color: rgb(250, 239, 192);
 }
 
 #info{
