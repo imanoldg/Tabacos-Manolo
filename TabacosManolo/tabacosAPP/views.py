@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseNotFound
-from .models import Distribuidor, Estanco, Cliente, Marca
+from .models import Distribuidor, Estanco, Cliente, Marca, Cigarrillo, Puro
 # Create your views here.
 def index(request):
     return render(request, 'index.html')
@@ -45,3 +45,23 @@ def listaMarcas(request):
     marca = Marca.objects.order_by('nombre')
     contexto = {'lista_marcas': marca}
     return render(request, 'listaMarcas.html', contexto)
+
+def detalleCigarro(request, id_cigar):
+    cigar = get_object_or_404(Cigarrillo, pk=id_cigar)
+    contexto = {'cigar': cigar}
+    return render(request, 'detalleCigarrillos.html', contexto)
+
+def listaCigarrillos(request):
+    cigar = Cigarrillo.objects.order_by('nombre')
+    contexto = {'lista_cigars': cigar}
+    return render(request, 'listaCigarrillos.html', contexto)
+
+def detallePuro(request, id_puro):
+    puro = get_object_or_404(Puro, pk=id_puro)
+    contexto = {'puro': puro}
+    return render(request, 'detallePuro.html', contexto)
+
+def listaPuros(request):
+    puro = Puro.objects.order_by('nombre')
+    contexto = {'lista_puros': puro}
+    return render(request, 'listaPuros.html', contexto)
