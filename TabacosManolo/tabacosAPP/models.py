@@ -56,7 +56,8 @@ class Cigarrillo(models.Model):
     
     nombre = models.CharField(max_length=100)
     tipo = models.CharField(max_length= 20, choices= select_tipo)
-    precio = models.PositiveIntegerField()
+    precio = models.FloatField()
+    marca = models.ForeignKey(Marca, related_name='cigarro', on_delete=models.CASCADE, default=False)
     imagenCig = models.URLField(max_length=600, null= True, blank= True)
 
     def __str__(self):
@@ -65,7 +66,8 @@ class Cigarrillo(models.Model):
 class Puro(models.Model):
     nombre = models.CharField(max_length=100)
     pais = models.CharField(max_length=100)
-    precio = models.PositiveIntegerField()
+    precio = models.FloatField()
+    marca = models.ForeignKey(Marca, related_name='puro', on_delete=models.CASCADE, default=False)
     imagenPuro = models.URLField(max_length=600, null= True, blank= True)
 
     def __str__(self):
