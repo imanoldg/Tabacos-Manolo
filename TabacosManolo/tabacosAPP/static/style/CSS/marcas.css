@@ -34,6 +34,7 @@
 #contenedor-marca h2{
     color: rgb(23, 18, 22);
     font-family: "Montserrat", sans-serif;
+    font-weight: normal;
 }
 
 #marcas #marca #detalle{
@@ -42,6 +43,10 @@
 
 #contenedor-marca a{ 
     text-decoration: none;
+}
+
+#contenedorInfo h1{
+    font-size: 27px;
 }
 
 #imagen img{
@@ -57,16 +62,56 @@
 
 #info{
     float: right;
-    height: 40%;
+    width: 60%;
+    height: 35%;
     font-size: 17px;
     margin-top: 10px;
     border-radius: 5px;
+    font-family: "Montserrat", sans-serif;
 }
 
 #estanco{
     display: inline-block;
-    width: 50%;
-    height: 40%;
+    width: 100%;
+    height: 50%;
     font-size: 17px;
-    margin-top: 50px;
+    margin-top: 5%;
+    margin-bottom: 15%;
+    font-family: "Montserrat", sans-serif;
+    font-size: 20px;
 }
+
+#estanco ul{
+    position: absolute;
+    width: 20%;
+    margin-top: 2%;
+    margin-bottom: 10%;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+#estanco ul li{
+    display: flex;
+    left: 0;
+    padding: 10px 20px;
+    border-left: 4px solid rgb(233, 124, 131);
+    margin: 10px 0;
+    transition: 0.2s;
+}
+
+#estanco li{
+    width: 100%;
+}
+
+#estanco a{
+    text-decoration: none;
+    color: black;
+}
+
+#estanco ul li:hover{
+    transform: translateX(10px);
+    background-color: rgb(233, 124, 131);
+    left: 10px;
+    color: white;
+}
+

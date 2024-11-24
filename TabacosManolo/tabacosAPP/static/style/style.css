@@ -47,7 +47,7 @@ ul li
 }
 
 #header
-{ background: transparent url(madera.jpg) no-repeat;
+{ background: transparent url(madera2.jpg) no-repeat;
   height: 177px;
   width: 100%;}
   
@@ -94,7 +94,8 @@ ul li
 
 #menubar
 { width: 880px;
-  height: 46px;} 
+  height: 46px;
+  font-family: "Merriweather", serif;} 
 
 ul#menu
 { float: right;
@@ -108,8 +109,7 @@ ul#menu li
   background: #5A5A5A url(tab.png) no-repeat 0 0;}
 
 ul#menu li a
-{ font-family: "Montserrat", sans-serif;
-  display: block; 
+{ display: block; 
   float: left; 
   height: 20px;
   padding: 6px 35px 5px 28px;

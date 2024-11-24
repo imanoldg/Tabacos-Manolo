@@ -5,10 +5,12 @@
     <body>
         {% extends 'base.html' %}
         {% block contenido%}
-        <h1>{{marca.nombre}}</h1>
         
 
         <div id="contenedorInfo">
+            
+        <h1>{{marca.nombre}}</h1>
+
             <div id="imagen">
                 <img src=" {{marca.imagenMarca}}" alt="Imagen del logo de la marca">
             </div>
@@ -35,9 +37,12 @@
             <br> <br>
         
         <div id="estanco">
+            
+            <h2>Disponible en:</h2>
+
             <ul>
                 {% for estanco in estancos %}
-                    <li>{{ estanco.nombre }}</li>
+                    <a href="{% url 'detalleEstancos' estanco.id %}"><li>{{ estanco.nombre }}</li></a>
                 {% endfor %}
             </ul>
         </div>
