@@ -38,7 +38,8 @@ def detalleClientes(request, id_cliente):
  
 def detalleMarcas(request, id_marca):
     marca = get_object_or_404(Marca, pk=id_marca)
-    contexto = {'marca': marca}
+    estancos = marca.estanco.all()
+    contexto = {'marca': marca, 'estancos': estancos}
     return render(request, 'detalleMarcas.html', contexto)
 
 def listaMarcas(request):

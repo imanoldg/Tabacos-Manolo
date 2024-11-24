@@ -1,5 +1,4 @@
 from django.db import models
-
 # Create your models here.
 
 class Distribuidor(models.Model):
@@ -40,7 +39,7 @@ class Marca(models.Model):
 
     nombre = models.CharField(max_length=100)
     tipo = models.CharField(max_length= 20, choices= select_tipo)
-    estanco = models.ForeignKey(Estanco, related_name='marcas', on_delete=models.CASCADE)
+    estanco = models.ManyToManyField(Estanco)
     distribuidor = models.ForeignKey(Distribuidor, related_name='marca', on_delete=models.CASCADE)
     imagenMarca = models.URLField(max_length=600, null= True, blank= True)
 

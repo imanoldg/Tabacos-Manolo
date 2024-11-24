@@ -35,18 +35,11 @@
             <br> <br>
         
         <div id="estanco">
-            {% if marca.estanco %}
-            
-            <p> <span class="resalte">- Nombre del Estanco: </span>{{ marca.estanco.nombre }}</p>
-            <p> <span class="resalte">- Localización: </span>{{ marca.estanco.localizacion }}</p>
-
-            <a href="{% url 'detalleEstancos' marca.estanco.id %}">
-                Ver detalles del estanco
-            </a>
-            <br> <br>
-            {% else %}
-            <p>Esta marca no tiene un estanco asociado.</p>
-            {% endif %}
+            <ul>
+                {% for estanco in estancos %}
+                    <li>{{ estanco.nombre }}</li>
+                {% endfor %}
+            </ul>
         </div>
 
 

@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <title>Detalle del Puro</title>
+    </head>
+    <body>
+        {% extends 'base.html' %}
+        {% block contenido%}
+        <h1>{{puro.nombre}}</h1>
+        
+
+        <div class="contenedorInfoPack">
+            <div id="imagen">
+                <img src=" {{puro.imagenPuro}}" alt="Imagen del puro">
+            </div>
+    
+            <div class="infoPack">
+                <p><span class="resalte">Origen del Tabaco: </span>{{ puro.pais }}</p>
+                <p><span class="resalte">Precio: </span>{{ puro.precio }}€</p>
+            </div>
+        </div>
+
+
+        {% endblock %}
+    
+    </body>
+</html> 

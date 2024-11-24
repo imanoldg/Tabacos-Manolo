@@ -7,14 +7,14 @@
         {% extends 'base.html' %}
         {% block contenido%}
         <h1>Lista de paquetes</h1>
-        <div id="paquetes">
+        <div class="paquetes">
             {% for cigar in lista_cigars %}
-                <div id="paquete">
+                <div class="paquete">
 
-                    <div id="contenedor-paquete">
+                    <div class="contenedor-paquete">
                         <a href="{% url 'detalleCigarro' cigar.id %}">
                             <img src="{{cigar.imagenCig}}" alt="{{cigar.nombre}}">
-                            <div id="detallePack">
+                            <div class="detallePack">
                                 <h2>{{cigar.nombre}}</h2>
                             </div>
                         </a>

@@ -7,14 +7,14 @@
         {% extends 'base.html' %}
         {% block contenido%}
         <h1>Lista de puros</h1>
-        <div id="puros">
+        <div class="paquetes">
             {% for puro in lista_puros %}
-                <div id="puro">
+                <div class="paquete">
 
-                    <div id="contenedor-puro">
+                    <div class="contenedor-paquete">
                         <a href="{% url 'detallePuro' puro.id %}">
                             <img src="{{puro.imagenPuro}}" alt="{{puro.nombre}}">
-                            <div id="detallePuros">
+                            <div class="detallePack">
                                 <h2>{{puro.nombre}}</h2>
                             </div>
                         </a>
