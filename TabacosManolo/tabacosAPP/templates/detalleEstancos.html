@@ -3,25 +3,21 @@
         <title>Detalle de los Estancos</title>
     </head>
     <body>
+        <div class = "box">
         {% extends 'base.html' %}
         {% block contenido%}
-        <h1>Detalle de los Estancos</h1>
-        <p>ID: {{ estanco.id }}</p>
+        <h1>Detalle del Estanco</h1>
         <p>Nombre: {{ estanco.nombre }}</p>
-        <p>Localizacion: {{ estanco.localizacion }}</p>
-        <p>ID_Distribuidor: {{ estanco.distribuidor_id }}</p>
-        {% if estanco.distribuidor %}
-            <p> - Nombre del Distribuidor: {{ estanco.distribuidor.nombre }}</p>
+        <p>- Localizacion: {{ estanco.localizacion }}</p>
+        {% if estanco.distribuidor %}  
+        <p> - Nombre del Distribuidor: <a href="{% url 'detalleDistribuidores' estanco.distribuidor.id %}">{{ estanco.distribuidor.nombre }}</p>
+        </a>
             <p> - País: {{ estanco.distribuidor.pais }}</p>
-            <p> - Exportación: {{ estanco.distribuidor.exportacion }}</p>
 
-            <a href="{% url 'detalleDistribuidores' estanco.distribuidor.id %}">
-                Ver detalles del distribuidor
-            </a>
         {% else %}
             <p>Este estanco no tiene un distribuidor asociado.</p>
         {% endif %}
         {% endblock %}
-    
+    </div>
     </body>
 </html>
