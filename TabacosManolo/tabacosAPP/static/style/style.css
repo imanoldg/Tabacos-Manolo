@@ -6,7 +6,7 @@ html
   padding: 0;}
 
 body
-{ font: normal .80em 'trebuchet ms', arial, sans-serif;
+{
   background: rgb(250, 239, 192);
 }
 
@@ -14,44 +14,17 @@ p
 { padding: 0 0 20px 0;
   line-height: 1.7em;}
 
-
-
-h1, h2, h3, h5, h6 
-{ color: #362C20;
-  letter-spacing: 0em;
-  padding: 0 0 5px 0;}
-
-h1, h2, h3
-{ font: normal 170% 'century gothic', arial;
-  margin: 0 0 15px 0;
-  padding: 15px 0 5px 0;
-  color: #000;}
-
-h2
-{ font-size: 160%;
-  padding: 9px 0 5px 0;
-  color: #009FBC;}
-
-h3
-{ font-size: 140%;
-  padding: 5px 0 0 0;}
-
-h6
-{ color: #009FBC;
-  padding: 0 0 5px 0;
-  font: normal 110% arial;
-  text-transform: uppercase;}
-
-h5, h6
-{ color: #888;
-  font: normal 95% arial;
-  letter-spacing: normal;
-  padding: 0 0 15px 0;}
+h1{
+  font-family: "Merriweather", serif;
+  font-weight: 700;
+  font-style: normal;
+}
 
 a
 { outline: none;
   text-decoration: underline;
-  color: rgb(212, 48, 59);}
+  color: rgb(212, 48, 59);
+}
 
 a:hover
 { text-decoration: none;

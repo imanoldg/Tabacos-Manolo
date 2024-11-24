@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <title>Lista Paquetes</title>
+    </head>
+
+    <body>  
+        {% extends 'base.html' %}
+        {% block contenido%}
+        <h1>Lista de paquetes</h1>
+        <div id="paquetes">
+            {% for cigar in lista_cigars %}
+                <div id="paquete">
+
+                    <div id="contenedor-paquete">
+                        <a href="{% url 'detalleCigarro' cigar.id %}">
+                            <img src="{{cigar.imagenCig}}" alt="{{cigar.nombre}}">
+                            <div id="detallePack">
+                                <h2>{{cigar.nombre}}</h2>
+                            </div>
+                        </a>
+                    </div>
+    
+                </div>
+            
+            {% endfor %}
+        </div>
+        {% endblock %}
+
+    </body>
+</html>

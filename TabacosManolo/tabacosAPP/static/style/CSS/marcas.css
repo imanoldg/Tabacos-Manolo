@@ -33,9 +33,10 @@
 
 #contenedor-marca h2{
     color: rgb(23, 18, 22);
+    font-family: "Montserrat", sans-serif;
 }
 
-#marcas #marca #detalles{
+#marcas #marca #detalle{
     padding: 5px;
 }
 

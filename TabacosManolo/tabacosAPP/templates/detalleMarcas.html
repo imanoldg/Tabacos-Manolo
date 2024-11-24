@@ -14,12 +14,12 @@
             </div>
     
             <div id="info">
-                <p>Tipo de Tabaco: {{ marca.tipo }}</p>
+                <p><span class="resalte">Tipo de Tabaco: </span>{{ marca.tipo }}</p>
     
                 {% if marca.distribuidor %}
-                    <p> - Nombre del Distribuidor: {{ marca.distribuidor.nombre }}</p>
-                    <p> - País: {{ marca.distribuidor.pais }}</p>
-                    <p> - Exportación: {{ marca.distribuidor.exportacion }}</p>
+                    <p><span class="resalte">- Nombre del Distribuidor: </span>{{ marca.distribuidor.nombre }}</p>
+                    <p><span class="resalte">- País: </span>{{ marca.distribuidor.pais }}</p>
+                    <p><span class="resalte">- Exportación: </span>{{ marca.distribuidor.exportacion }}</p>
     
                     <a href="{% url 'detalleDistribuidores' marca.distribuidor.id %}">
                         Ver detalles del distribuidor
@@ -37,8 +37,8 @@
         <div id="estanco">
             {% if marca.estanco %}
             
-            <p> - Nombre del Estanco: {{ marca.estanco.nombre }}</p>
-            <p> - Localización: {{ marca.estanco.localizacion }}</p>
+            <p> <span class="resalte">- Nombre del Estanco: </span>{{ marca.estanco.nombre }}</p>
+            <p> <span class="resalte">- Localización: </span>{{ marca.estanco.localizacion }}</p>
 
             <a href="{% url 'detalleEstancos' marca.estanco.id %}">
                 Ver detalles del estanco

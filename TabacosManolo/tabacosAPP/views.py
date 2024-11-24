@@ -49,7 +49,7 @@ def listaMarcas(request):
 def detalleCigarro(request, id_cigar):
     cigar = get_object_or_404(Cigarrillo, pk=id_cigar)
     contexto = {'cigar': cigar}
-    return render(request, 'detalleCigarrillos.html', contexto)
+    return render(request, 'detalleCigarrillo.html', contexto)
 
 def listaCigarrillos(request):
     cigar = Cigarrillo.objects.order_by('nombre')

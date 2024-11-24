@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <title>Lista Puros</title>
+    </head>
+
+    <body>  
+        {% extends 'base.html' %}
+        {% block contenido%}
+        <h1>Lista de puros</h1>
+        <div id="puros">
+            {% for puro in lista_puros %}
+                <div id="puro">
+
+                    <div id="contenedor-puro">
+                        <a href="{% url 'detallePuro' puro.id %}">
+                            <img src="{{puro.imagenPuro}}" alt="{{puro.nombre}}">
+                            <div id="detallePuros">
+                                <h2>{{puro.nombre}}</h2>
+                            </div>
+                        </a>
+                    </div>
+    
+                </div>
+            
+            {% endfor %}
+        </div>
+        {% endblock %}
+
+    </body>
+</html>
