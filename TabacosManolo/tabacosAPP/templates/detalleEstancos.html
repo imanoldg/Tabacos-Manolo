@@ -3,11 +3,11 @@
         <title>Detalle de los Estancos</title>
     </head>
     <body>
-        <div class = "box">
+        <div id = "box">
         {% extends 'base.html' %}
         {% block contenido%}
         <h1>Detalle del Estanco</h1>
-        <p>Nombre: {{ estanco.nombre }}</p>
+        <p>{{ estanco.nombre }}</p>
         <p>- Localizacion: {{ estanco.localizacion }}</p>
         {% if estanco.distribuidor %}  
         <p> - Nombre del Distribuidor: <a href="{% url 'detalleDistribuidores' estanco.distribuidor.id %}">{{ estanco.distribuidor.nombre }}</p>

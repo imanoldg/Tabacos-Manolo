@@ -7,7 +7,7 @@
         <div class = "lista_estancos">
             {% extends 'base.html' %}
             {% block contenido%}
-            <h2>Lista de estancos</h2>
+            <h1>Lista de estancos</h1>
             {% for estanco in lista_estancos %}
                 <li>
                     <span><a href="{% url 'detalleEstancos' estanco.id %}">{{ estanco.nombre }}</a></span>
