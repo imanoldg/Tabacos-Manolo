@@ -3,11 +3,11 @@
 }
 
 #contenidoCliente{
-    display: inline-block;
+    display: flex;
 }
 
 #clienteInfo img{
-    border-radius: 50%;
+    border-radius: 5%;
 }
 
 #cliente_miniInfo img{
