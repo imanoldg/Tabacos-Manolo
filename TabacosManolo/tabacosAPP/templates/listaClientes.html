@@ -12,8 +12,9 @@
                 <ul>
                     <li>
                         <a href="{% url 'detalleClientes' cliente.id %}">
-                            <img src=" {{cliente.imagenCliente}}" alt="Foto del cliente" >
-                            <h2>{{ cliente.nombre }} {{ cliente.apellido }}</h2></a>
+                            <span id="spanImagen"><img src=" {{cliente.imagenCliente}}" alt="Foto del cliente" ></span>
+                            <span id="spanNombre"><h2>{{ cliente.nombre }} {{ cliente.apellido }}</h2></span>
+                            </a>
                     </li>
                 </ul>
                 
