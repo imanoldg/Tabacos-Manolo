@@ -6,10 +6,18 @@
         {% extends 'base.html' %}
         {% block contenido%}
         <h1>Lista de Clientes</h1>
-        {% for cliente in lista_clientes %}
-            <li>
-                <a href="{% url 'detalleClientes' cliente.id %}">{{ cliente.nombre }}</a>
-            </li>
+        {% for cliente in lista_clientes %} 
+        
+            <div id="cliente_miniInfo">
+                <ul>
+                    <li>
+                        <a href="{% url 'detalleClientes' cliente.id %}">
+                            <img src=" {{cliente.imagenCliente}}" alt="Foto del cliente" >
+                            <h2>{{ cliente.nombre }} {{ cliente.apellido }}</h2></a>
+                    </li>
+                </ul>
+                
+            </div>
         {% endfor %}
         {% endblock %}
     </body>
