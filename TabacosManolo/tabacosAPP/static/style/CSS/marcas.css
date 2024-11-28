@@ -23,6 +23,7 @@
 
 #contenedor-marca{
     border-radius: 10px;
+    transition: 0.5s ease;
     text-align: center;
     background-color: rgba(221, 161, 118, 0.87);
 }
