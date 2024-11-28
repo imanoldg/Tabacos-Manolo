@@ -6,11 +6,33 @@
         {% extends 'base.html' %}
         {% block contenido%}
         <h1>Lista de Distribuidores</h1>
-        {% for distribuidor in lista_distribuidores %}
-            <li>
-                <a href="{% url 'detalleDistribuidores' distribuidor.id %}">{{ distribuidor.nombre }}</a>
-            </li>
-        {% endfor %}
+
+        <div id= distribuidores>
+            {% for distribuidor in lista_distribuidores %}
+                <div id="distribuidor">
+                    <a href="{% url 'detalleDistribuidores' distribuidor.id %}">
+                        <img src="{{distribuidor.imagenDistribuidor}}" alt="distribuidor.nombre">
+                        <div id="detalle">
+                            <h2>{{distribuidor.nombre}}</h2>
+                        </div>
+                    </a>
+                    
+                </div>
+            {% endfor %}
+        </div>
         {% endblock %}
     </body>
 </html>
+
+<!--
+<div id="marca">
+
+    <div id="contenedor-marca">
+        <a href="{% url 'detalleMarcas' marca.id %}">
+            <img src="{{marca.imagenMarca}}" alt="{{marca.nombre}}">
+            <div id="detalle">
+                <h2>{{marca.nombre}}</h2>
+            </div>
+        </a>
+    </div>
+-->
