@@ -7,20 +7,24 @@
         {% block contenido%}
         <h1>Lista de Distribuidores</h1>
 
-        <div id= distribuidores>
+        <div id= "distribuidores">
             {% for distribuidor in lista_distribuidores %}
-                <div id="distribuidor">
-                    <div id="contenedorDistribuidor">
+                <ul id="listaDistribuidores">
+                    <li id="distribuidor">
                         <a href="{% url 'detalleDistribuidores' distribuidor.id %}">
-                        
-                            <img src="{{distribuidor.imagenDistr}}" alt="{{distribuidor.nombre}}">
-                            <div id="detalle">
-                                <h2>{{distribuidor.nombre}}</h2>
+                
+                            <img src="{{distribuidor.imagenDistr}}" alt="{{distribuidor.nombre}}" >
+                            
+                            <div id="texto">
+                                <h2 id="nombreDistribuidor">{{distribuidor.nombre}}</h2>
                             </div>
+                            
+                            
                         </a>
-                    </div>
-
-                </div>
+                    </li>
+                </ul>
+                
+                   
             {% endfor %}
         </div>
         {% endblock %}

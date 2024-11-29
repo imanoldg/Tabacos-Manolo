@@ -5,11 +5,51 @@
     <body>
         {% extends 'base.html' %}
         {% block contenido%}
-        <h1>Detalle de los Distribuidores</h1>
-        <p>ID: {{ distribuidor.id }}</p>
-        <p>Nombre: {{ distribuidor.nombre }}</p>
-        <p>País: {{ distribuidor.pais }}</p>
-        <p>Exportación: {{ distribuidor.exportacion }}</p>
+
+        <div id="contenedorInfo">
+            <h1>{{distribuidor.nombre}}</h1>
+            <div id="imagen">
+                <img src="{{distribuidor.imagenDistr}}" alt="Imagen logo {{distribuidor.nombre}}">
+            </div>
+
+            <div id="info">
+                {% if distribuidor %}
+                    <p><span class="resalte">- Nombre del Distribuidor: </span>{{ marca.distribuidor.nombre }}</p>
+                    <p><span class="resalte">- País: </span>{{ distribuidor.pais }}</p>
+                    <p><span class="resalte">- Exportación: </span>{{ distribuidor.exportacion }}</p>
+                {% else %}
+                    <p>no existe este distribuidor.</p>
+                {% endif %}
+            </div>
+        </div>
+        
         {% endblock %}
     </body>
 </html>
+
+<!-- 
+<div id="contenedorInfo">
+            
+    <h1>{{marca.nombre}}</h1>
+
+        <div id="imagen">
+            <img src=" {{marca.imagenMarca}}" alt="Imagen del logo de la marca">
+        </div>
+
+        <div id="info">
+            <p><span class="resalte">Tipo de Tabaco: </span>{{ marca.tipo }}</p>
+
+            {% if marca.distribuidor %}
+                <p><span class="resalte">- Nombre del Distribuidor: </span>{{ marca.distribuidor.nombre }}</p>
+                <p><span class="resalte">- País: </span>{{ marca.distribuidor.pais }}</p>
+                <p><span class="resalte">- Exportación: </span>{{ marca.distribuidor.exportacion }}</p>
+
+                <a href="{% url 'detalleDistribuidores' marca.distribuidor.id %}">
+                    Ver detalles del distribuidor
+                </a>
+            {% else %}
+                <p>Esta marca no tiene un distribuidor asociado.</p>
+            {% endif %}
+        </div>
+</div>
+-->
