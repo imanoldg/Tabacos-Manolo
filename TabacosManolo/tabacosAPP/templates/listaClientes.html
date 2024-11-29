@@ -10,12 +10,14 @@
         
             <div id="cliente_miniInfo">
                 <ul>
-                    <li>
-                        <a href="{% url 'detalleClientes' cliente.id %}">
+                    <a href="{% url 'detalleClientes' cliente.id %}">
+                        <li>
+                       
                             <span id="spanImagen"><img src=" {{cliente.imagenCliente}}" alt="Foto del cliente" ></span>
                             <span id="spanNombre"><h2>{{ cliente.nombre }} {{ cliente.apellido }}</h2></span>
-                            </a>
-                    </li>
+                            
+                        </li>
+                    </a>
                 </ul>
                 
             </div>

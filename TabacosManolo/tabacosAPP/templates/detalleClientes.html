@@ -13,17 +13,17 @@
             <div id="clienteInfo">
                 <img src=" {{cliente.imagenCliente}}" alt="Foto del cliente" >
                 <h1>{{ cliente.nombre }} {{ cliente.apellido }}</h1>
-                <p>Edad: {{ cliente.edad }}</p>
+                <h3><span class="resalte">Edad:</span> {{ cliente.edad }}</h3>
             </div>
             <div id="estancoInfo">
                 {% if cliente.estanco %}
-                    <ul>
-                        <li>Estanco donde compra: {{ cliente.estanco.nombre }}</li>
-                        <li>Ubicacion del estanco: {{ cliente.estanco.localizacion }}</li>
-                        <li><a href="{% url 'detalleEstancos' cliente.estanco.id %}">
-                            Informacion sobre el estanco
-                        </a></li>
-                    </ul>
+                    <h2><span class="resalte">INFORMACION DEL ESTANCO</span></h2>
+                    <br>
+                    <p><span class="resalte"> - Nombre del estanco: </span> {{ cliente.estanco.nombre }}</p>
+                    <p><span class="resalte"> - Ubicacion del estanco: </span>{{ cliente.estanco.localizacion }}</p>
+                    <a href="{% url 'detalleEstancos' cliente.estanco.id %}">
+                        Mas informacion sobre el estanco
+                    </a>
                 {% else %}
                     <p>Este cliente no compra en ningun estanco.</p>
                 {% endif %}
