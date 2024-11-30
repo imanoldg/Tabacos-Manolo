@@ -12,30 +12,64 @@
         <div id="contenedorPrincipal">
             <section id="seccionEstancos">
 
-                <div class="parteContenido">
+                <div class="parteIzquierda">
                     <h2>¡Visita uno de nuestros estancos!</h2>
                     <p>Encuentra una gran variedad de productos en cada uno de nuestros estancos.</p>
                 </div>
 
-                <div class="parteBoton">
-                    <button class="boton" onclick="window.location.href='{% url 'listaEstancos' %}';">ESTANCOS</button>
+                <div class="parteDerecha">
+                    <button class="boton" onclick="window.location.href='{% url 'listaEstancos' %}' ;">ESTANCOS</button>
                 </div>
 
             </section>
 
             <section id="seccionMarcas">
 
+                <div class="parteIzquierda">
+                    <img class = "imagen" src="static/style/marcas.jpg" alt="Foto de las diferentes marcas que se pueden encontrar en nuestros estancos">
+                </div>
+
+                <div class="parteDerecha">
+                    <h2>Variedad de marcas</h2>
+                    <p>Descubre la gran variedad de marcas que vendemos en nuestros estancos</p>
+                    <button class="boton2" onclick="window.location.href='{% url 'listaMarcas' %}' ;">MARCAS</button>
+                </div>
             </section>
 
             <section id="seccionPaquetes">
+                <div class="parteIzquierda">
+                    <h2>Gran cantidad de productos</h2>
+                    <p>Explora la cantidad de productos de los que disponemos en nuestros estancos</p>
+                    <button class="boton2" onclick="window.location.href='{% url 'listaCigarros' %}' ;">PAQUETES</button>
+                </div>
 
+                <div class="parteDerecha">
+                    <img class="imagen"  src="static/style/paquete.png" alt="Imagen de un paquete de tabaco">
+                </div>
             </section>
 
             <section id="seccionPuros">
+                <div class="parteIzquierda">
+                    <img class="imagen" src="static/style/puros.jpg" alt="Imagen de una cajetilla de puros">
+                </div>
 
+                <div class="parteDerecha">
+                    <h2>Gran seleccion</h2>
+                    <p>Descubre nuestra seleccion de los mejores puros del mercado</p>
+                    <button class="boton2" onclick="window.location.href='{% url 'listaPuros' %}' ;">PUROS</button>
+                </div>
             </section>
 
-            
+            <section id="seccionDistribuidores">
+                <div class="parteIzquierda">
+                    <h2>Nuestros distribuidores</h2>
+                    <p>Descubre mas informacion sobre nuestros distribuidores de tabaco</p>
+                </div>
+
+                <div class="parteDerecha">
+                    <button class="boton" onclick="window.location.href='{% url 'listaDistribuidores' %}' ;">DISTRIBUIDORES</button>
+                </div>
+            </section>
         </div>
         {% endblock %}
     </body>
