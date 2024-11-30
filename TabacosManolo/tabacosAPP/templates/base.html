@@ -17,6 +17,7 @@
   <link rel="stylesheet" type="text/css" href="{% static 'style/CSS/CigarPuro.css' %}" />
   <link rel="stylesheet" type="text/css" href="{% static 'style/CSS/estancos.css' %}" />
   <link rel="stylesheet" type="text/css" href="{% static 'style/CSS/Distribuidores.css' %}">
+  
 </head>
 
 <body>
@@ -26,7 +27,7 @@
         <div id="logo_text">
           <!-- class="logo_colour", allows you to change the colour of the text -->
           <h1><a href="{% url 'index' %}">Tabacos<span class="logo_colour">Manolo</span></a></h1>
-          <h2>¡Compra tu mejor tabaco aqui!</h2>
+          <h2>¡La mejor cadena de estancos!</h2>
         </div>
       </div>
       <div id="menubar">
@@ -37,6 +38,8 @@
           <li><a href="{% url 'listaDistribuidores' %}">Distribuidores</a></li>
           <li><a href="{% url 'listaEstancos' %}">Estancos</a></li>
           <li><a href="{% url 'listaMarcas' %}">Marcas</a></li>
+          <li><a href="{% url 'listaCigarros' %}">Cigarros</a></li>
+          <li><a href="{% url 'listaPuros' %}">Puros</a></li>
         </ul>
       </div>
     </div>
