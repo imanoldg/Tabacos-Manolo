@@ -4,16 +4,18 @@
     </head>
 
     <body>
-        <div class = "lista_estancos">
-            {% extends 'base.html' %}
-            {% block contenido%}
-            <h1>Lista de estancos</h1>
-            {% for estanco in lista_estancos %}
-                <li>
-                    <span><a href="{% url 'detalleEstancos' estanco.id %}">{{ estanco.nombre }}</a></span>
-                </li>
-            {% endfor %}
-            {% endblock %}
+        {% extends 'base.html' %}
+        {% block contenido%}
+        <h1>Lista de estancos</h1>
+        <div class = "estanco">
+            <ul>
+                {% for estanco in lista_estancos %}
+                    <li>
+                        <a href="{% url 'detalleEstancos' estanco.id %}">{{ estanco.nombre }}</a>
+                    </li>
+                {% endfor %}
+            </ul>
         </div>
+        {% endblock %}
     </body>
 </html>

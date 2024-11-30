@@ -8,11 +8,11 @@
         {% block contenido%}
         <h1>Detalle del Estanco</h1>
         <p>{{ estanco.nombre }}</p>
-        <p>- Localizacion: {{ estanco.localizacion }}</p>
+        <p><span class = "resalte">Localizacion:</span> {{ estanco.localizacion }}</p>
         {% if estanco.distribuidor %}  
-        <p> - Nombre del Distribuidor: <a href="{% url 'detalleDistribuidores' estanco.distribuidor.id %}">{{ estanco.distribuidor.nombre }}</p>
+        <p><span class = "resalte">Nombre del Distribuidor:</span> <a href="{% url 'detalleDistribuidores' estanco.distribuidor.id %}">{{ estanco.distribuidor.nombre }}</p>
         </a>
-            <p> - País: {{ estanco.distribuidor.pais }}</p>
+        <p><span class = "resalte">País:</span> {{ estanco.distribuidor.pais }}</p>
 
         {% else %}
             <p>Este estanco no tiene un distribuidor asociado.</p>
@@ -20,4 +20,4 @@
         {% endblock %}
     </div>
     </body>
-</html>
+</html> 
