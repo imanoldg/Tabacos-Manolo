@@ -71,7 +71,7 @@
     font-family: "Montserrat", sans-serif;
 }
 
-#estanco{
+.estanco{
     display: inline-block;
     width: 100%;
     height: 50%;
@@ -82,7 +82,7 @@
     font-size: 20px;
 }
 
-#estanco ul{
+.estanco ul{
     position: absolute;
     width: 20%;
     margin-top: 2%;
@@ -91,7 +91,7 @@
     box-sizing: border-box;
 }
 
-#estanco ul li{
+.estanco ul li{
     display: flex;
     left: 0;
     padding: 10px 20px;
@@ -100,16 +100,16 @@
     transition: 0.2s;
 }
 
-#estanco li{
+.estanco li{
     width: 100%;
 }
 
-#estanco a{
+.estanco a{
     text-decoration: none;
     color: black;
 }
 
-#estanco ul li:hover{
+.estanco ul li:hover{
     transform: translateX(10px);
     background-color: rgb(233, 124, 131);
     left: 10px;
