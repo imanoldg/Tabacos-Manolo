@@ -1,37 +1,49 @@
-#contenedorProncipal {
+#titulo{
+    font-size: 28px;
+}
+
+#contenedorPrincipal{
+    margin-top: 10%;
+}
+
+#contenedorPrincipal h2{
+    font-size: 35px;
+    font-family: "Merriweather", serif; 
+}
+
+#contenedorPrincipal p{
+  font-family: "Montserrat", sans-serif;
+  margin-top: 20px;
+  font-size: 20px;
+}
+
+#seccionEstancos{
+    width: 100%;
+    height: 40%;
     text-align: center;
-    background: #ffffff;
-    padding: 20px 40px;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    max-width: 400px;
-    width: 90%;
+    display: inline-block;
 }
 
-/* Títulos */
-#contenedorProncipal h1 {
-    font-size: 2rem;
-    color: #4CAF50;
-    margin-bottom: 20px;
+.parteContenido{
+    width: 50%;
+    float: left;
 }
 
-/* Párrafos */
-#contenedorProncipal p {
-    margin: 10px 0;
-    font-size: 1rem;
+.parteBoton{
+    width: 50%;
+    float: right;
+    height: 50%;
 }
 
-/* Enlaces */
-#contenedorProncipal a {
+.boton{
+    margin-top: 15%;
+    padding: 30px;
+    width: 65%;
+    border-radius: 30px;
+    font-family: "Montserrat", sans-serif;
+    font-size: 20px;
+}
+
+.boton a{
     text-decoration: none;
-    color: #4CAF50;
-    font-weight: bold;
-    transition: color 0.3s, background-color 0.3s;
-}
-
-#contenedorProncipal a:hover {
-    color: #ffffff;
-    background-color: #4CAF50;
-    padding: 2px 4px;
-    border-radius: 4px;
 }
