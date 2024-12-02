@@ -18,6 +18,11 @@
     font-family: "Montserrat", sans-serif;
 }
 
+#cliente_miniInfo {
+
+    margin-top: 5%;
+
+}
 
 #cliente_miniInfo img{
     width: 100px;

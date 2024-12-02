@@ -7,6 +7,11 @@
         {% extends 'base.html' %}
         {% block contenido%}
         <h1>Lista de estancos</h1>
+
+        <div id="contenedorBuscador">
+            <input type="text" class="buscador" placeholder="Buscar marca...">
+        </div>
+
         <div class = "estanco">
             <ul>
                 {% for estanco in lista_estancos %}

@@ -46,6 +46,30 @@
     text-decoration: none;
 }
 
+.contenedorBuscador{
+    width: 90%;
+    height: 10%;
+    display: inline-block;
+}
+
+.buscador{
+    margin-top: 15px;
+    padding: 10px;
+    width: 554px;
+    border-radius: 20px;
+    margin-left: 20%;
+    border: 2px solid rgb(233, 124, 131);
+    font-family: "Montserrat", sans-serif;
+}
+
+.buscador:focus{
+    border: 1px solid rgb(224, 126, 126);
+}
+
+.filtro{
+    display: none;
+}
+
 #contenedorInfo h1{
     font-size: 27px;
 }

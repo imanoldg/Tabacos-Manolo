@@ -6,6 +6,11 @@
         {% extends 'base.html' %}
         {% block contenido%}
         <h1>Lista de Clientes</h1>
+
+        <div id="contenedorBuscador">
+            <input type="text" class="buscador" placeholder="Buscar marca...">
+        </div>
+
         {% for cliente in lista_clientes %} 
         
             <div id="cliente_miniInfo">

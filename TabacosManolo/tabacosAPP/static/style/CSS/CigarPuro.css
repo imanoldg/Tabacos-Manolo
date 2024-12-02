@@ -1,6 +1,7 @@
 .paquetes{
     display: flex;
     flex-wrap: wrap;
+    margin-top: 5%;
 }
 
 .paquetes .paquete{

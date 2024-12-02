@@ -7,6 +7,10 @@
         {% block contenido%}
         <h1>Lista de Distribuidores</h1>
 
+        <div id="contenedorBuscador">
+            <input type="text" class="buscador" placeholder="Buscar marca...">
+        </div>
+
         <div id= "distribuidores">
             {% for distribuidor in lista_distribuidores %}
                 <ul id="listaDistribuidores">

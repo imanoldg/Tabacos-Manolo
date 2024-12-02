@@ -7,6 +7,11 @@
         {% extends 'base.html' %}
         {% block contenido%}
         <h1>Lista de paquetes</h1>
+
+        <div id="contenedorBuscador">
+            <input type="text" class="buscador" placeholder="Buscar marca...">
+        </div>
+
         <div class="paquetes">
             {% for cigar in lista_cigars %}
                 <div class="paquete">
