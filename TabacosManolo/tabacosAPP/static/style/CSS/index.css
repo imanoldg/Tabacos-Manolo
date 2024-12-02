@@ -23,6 +23,8 @@
     height: 20%;
     text-align: center;
     display: inline-block;
+    place-items: center;
+    align-content: center;
 }
 
 #seccionMarcas{
@@ -31,6 +33,8 @@
     height: 20%;
     text-align: center;
     display: inline-block;
+    place-items: center;
+    align-content: center;
 }
 
 #seccionPaquetes{
@@ -39,6 +43,8 @@
     height: 20%;
     text-align: center;
     display: inline-block;
+    place-items: center;
+    align-content: center;
 }
 
 #seccionPuros{
@@ -47,6 +53,8 @@
     height: 20%;
     text-align: center;
     display: inline-block;
+    place-items: center;
+    align-content: center;
 }
 
 #seccionDistribuidores{
@@ -55,6 +63,8 @@
     height: 20%;
     text-align: center;
     display: inline-block;
+    place-items: center;
+    align-content: center;
 }
 
 .parteIzquierda{
