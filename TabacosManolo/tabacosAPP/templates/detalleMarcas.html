@@ -19,13 +19,8 @@
                 <p><span class="resalte">Tipo de Tabaco: </span>{{ marca.tipo }}</p>
     
                 {% if marca.distribuidor %}
-                    <p><span class="resalte">- Nombre del Distribuidor: </span>{{ marca.distribuidor.nombre }}</p>
-                    <p><span class="resalte">- País: </span>{{ marca.distribuidor.pais }}</p>
-                    <p><span class="resalte">- Exportación: </span>{{ marca.distribuidor.exportacion }}</p>
-    
-                    <a href="{% url 'detalleDistribuidores' marca.distribuidor.id %}">
-                        Ver detalles del distribuidor
-                    </a>
+                    <p><span class="resalte">Distribuidor: </span><a href="{% url 'detalleDistribuidores' marca.distribuidor.id %}">{{ marca.distribuidor.nombre }}</a></p>
+                    
                 {% else %}
                     <p>Esta marca no tiene un distribuidor asociado.</p>
                 {% endif %}
