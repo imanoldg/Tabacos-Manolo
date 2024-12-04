@@ -14,7 +14,7 @@
 
         <div class = "estanco">
             <ul>
-                {% for estanco in lista_estancos %}
+                {% for estanco in estanco_list %}
                     <li>
                         <a href="{% url 'detalleEstancos' estanco.id %}">{{ estanco.nombre }}</a>
                     </li>

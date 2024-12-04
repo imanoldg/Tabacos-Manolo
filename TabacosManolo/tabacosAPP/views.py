@@ -2,6 +2,7 @@ from django.shortcuts import render, get_object_or_404
 from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseNotFound
 from .models import Distribuidor, Estanco, Cliente, Marca, Cigarrillo, Puro
+from django.views.generic import ListView, DetailView
 # Create your views here.
 def index(request):
     return render(request, 'index.html')
@@ -11,10 +12,10 @@ def listaDistribuidores(request):
     contexto = {'lista_distribuidores': distribuidor}
     return render(request, 'listaDistribuidores.html', contexto)
         
-def listaEstancos(request):
-    estanco = Estanco.objects.order_by('nombre')
-    contexto = {'lista_estancos': estanco}
-    return render(request, 'listaEstancos.html', contexto)
+class listaEstancosView(ListView):
+    model = Estanco
+    template_name = 'listaEstancos.html'
+    queryset = Estanco.objects.order_by('nombre')
 
 def listaClientes(request):
     cliente = Cliente.objects.order_by('nombre')
@@ -26,10 +27,9 @@ def detalleDistribuidores(request, id_distribuidor):
     contexto = {'distribuidor': distribuidor}
     return render(request, 'detalleDistribuidores.html', contexto)
 
-def detalleEstancos(request, id_estanco):
-    estanco = get_object_or_404(Estanco, pk=id_estanco)
-    contexto = {'estanco': estanco}
-    return render(request, 'detalleEstancos.html', contexto)
+class detalleEstancosView(DetailView):
+    model = Estanco
+    template_name = 'detalleEstancos.html'
 
 def detalleClientes(request, id_cliente):
     cliente = get_object_or_404(Cliente, pk=id_cliente)

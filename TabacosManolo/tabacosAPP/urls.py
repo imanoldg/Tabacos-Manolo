@@ -10,8 +10,8 @@ urlpatterns = [
     path('listadoDistribuidores/', views.listaDistribuidores, name='listaDistribuidores'), 
     path('DetalleDistribuidores/<int:id_distribuidor>/', views.detalleDistribuidores, name='detalleDistribuidores'),  
 
-    path('listadoEstancos/', views.listaEstancos, name='listaEstancos'), 
-    path('DetalleEstancos/<int:id_estanco>/', views.detalleEstancos, name='detalleEstancos'),
+    path('listadoEstancos/', views.listaEstancosView.as_view(), name='listaEstancos'), 
+    path('DetalleEstancos/<int:pk>/', views.detalleEstancosView.as_view(), name='detalleEstancos'),
 
     path('listadoMarcas/', views.listaMarcas, name= 'listaMarcas'),
     path('DetalleMarcas/ <int:id_marca>/', views.detalleMarcas, name='detalleMarcas'),
