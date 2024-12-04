@@ -12,7 +12,7 @@
         </div>
 
         <div id= "distribuidores">
-            {% for distribuidor in lista_distribuidores %}
+            {% for distribuidor in distribuidor_list %}
                 <ul id="listaDistribuidores">
                     <li id="distribuidor">
                         <a href="{% url 'detalleDistribuidores' distribuidor.id %}">

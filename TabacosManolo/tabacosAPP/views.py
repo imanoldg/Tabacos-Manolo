@@ -7,34 +7,32 @@ from django.views.generic import ListView, DetailView
 def index(request):
     return render(request, 'index.html')
 
-def listaDistribuidores(request):
-    distribuidor = Distribuidor.objects.order_by('nombre')
-    contexto = {'lista_distribuidores': distribuidor}
-    return render(request, 'listaDistribuidores.html', contexto)
+class listaDistribuidoresView(ListView):
+    model = Distribuidor
+    template_name = 'listaDistribuidores.html'
+    queryset = Distribuidor.objects.order_by('nombre')
         
 class listaEstancosView(ListView):
     model = Estanco
     template_name = 'listaEstancos.html'
     queryset = Estanco.objects.order_by('nombre')
 
-def listaClientes(request):
-    cliente = Cliente.objects.order_by('nombre')
-    contexto = {'lista_clientes': cliente}
-    return render(request, 'listaClientes.html', contexto)
+class listaClientesView(ListView):
+    model = Cliente
+    template_name = 'listaClientes.html'
+    queryset = Cliente.objects.order_by('nombre')
 
-def detalleDistribuidores(request, id_distribuidor):
-    distribuidor = get_object_or_404(Distribuidor, pk=id_distribuidor)
-    contexto = {'distribuidor': distribuidor}
-    return render(request, 'detalleDistribuidores.html', contexto)
+class detalleDistribuidoresView(DetailView):
+    model = Distribuidor
+    template_name = 'detalleDistribuidores.html'
 
 class detalleEstancosView(DetailView):
     model = Estanco
     template_name = 'detalleEstancos.html'
 
-def detalleClientes(request, id_cliente):
-    cliente = get_object_or_404(Cliente, pk=id_cliente)
-    contexto = {'cliente': cliente}
-    return render(request, 'detalleClientes.html', contexto)
+class detalleClientesView(DetailView):
+    model = Cliente
+    template_name = 'detalleClientes.html'
  
 def detalleMarcas(request, id_marca):
     marca = get_object_or_404(Marca, pk=id_marca)
@@ -42,27 +40,26 @@ def detalleMarcas(request, id_marca):
     contexto = {'marca': marca, 'estancos': estancos}
     return render(request, 'detalleMarcas.html', contexto)
 
-def listaMarcas(request):
-    marca = Marca.objects.order_by('nombre')
-    contexto = {'lista_marcas': marca}
-    return render(request, 'listaMarcas.html', contexto)
+class listaMarcasView(ListView):
+    model = Marca
+    template_name = 'listaMarcas.html'
+    queryset = Marca.objects.order_by('nombre')
 
 def detalleCigarro(request, id_cigar):
     cigar = get_object_or_404(Cigarrillo, pk=id_cigar)
     contexto = {'cigar': cigar}
     return render(request, 'detalleCigarrillo.html', contexto)
 
-def listaCigarrillos(request):
-    cigar = Cigarrillo.objects.order_by('nombre')
-    contexto = {'lista_cigars': cigar}
-    return render(request, 'listaCigarrillos.html', contexto)
+class listaCigarrillosView(ListView):
+    model = Cigarrillo
+    template_name = 'listaCigarrillos.html'
+    queryset = Cigarrillo.objects.order_by('nombre')
 
-def detallePuro(request, id_puro):
-    puro = get_object_or_404(Puro, pk=id_puro)
-    contexto = {'puro': puro}
-    return render(request, 'detallePuro.html', contexto)
+class detallePuroView(DetailView):
+    model = Puro
+    template_name = 'detallePuro.html'
 
-def listaPuros(request):
-    puro = Puro.objects.order_by('nombre')
-    contexto = {'lista_puros': puro}
-    return render(request, 'listaPuros.html', contexto)
+class listaPurosView(ListView):
+    model = Puro
+    template_name = 'listaPuros.html'
+    queryset = Puro.objects.order_by('nombre')
