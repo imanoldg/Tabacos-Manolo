@@ -5,6 +5,7 @@ class Distribuidor(models.Model):
     nombre = models.CharField(max_length=100)
     pais = models.CharField(max_length=100)
     exportacion = models.CharField(max_length=100)
+    infoDistribuidor = models.CharField(max_length=2000)
     imagenDistr = models.URLField(max_length=600, null= True, blank= True)
 
     def __str__(self):
