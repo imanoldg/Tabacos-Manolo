@@ -1,47 +1,56 @@
 #distribuidores{
-    margin: 20px;
     margin-top: 5%;
 }
 
-#distribuidor {
-    list-style: none;
-    display: flex;
-    align-items: center;
-    margin: 15px;
-    padding: 10px;
-    border: 1px solid;
-    border-radius: 10px;
-    transition: 0.3s ease;
-    flex-wrap: wrap;
-    
+#distribuidores ul{
+    list-style-type: none;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-
-#distribuidor:hover{
+#distribuidores ul li{
+    display: flex;
     background-color: rgba(221, 161, 118, 0.87);
+    margin: 10px 0;
+    transition: 0.7s;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
 }
 
-#distribuidor a{
-    text-decoration: none;
-    display: flex;
-    align-items: center;
+#distribuidores ul li h2{
+    margin: 0;
+    padding: 10px;
+    padding-top: 55px;
+    font-size: 1.5em;
     font-family: "Montserrat", sans-serif;
+    font-weight: normal;
+}
+
+#distribuidores ul a{
+    text-decoration: none;
+    color: black;
+}
+
+#distribuidores ul li:hover{
+    transform: translateY(-5px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+
 }
 
 #distribuidor img{
-    width: 150px;
+    width: 200px;
     height: 100px;
-    margin-right: 10px;
-    border-radius: 20px;
+    margin: 20px;
+    border-radius: 100px;
 }
 
+#distribuidores ul li:hover h2 {
+    color: rgb(250, 239, 192);
+}
 
-
-
-
-
-
-
-
-
-
+#distribuidores ul li:hover img {
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+}
