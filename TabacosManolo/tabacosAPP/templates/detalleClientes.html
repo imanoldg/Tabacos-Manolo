@@ -17,13 +17,7 @@
             </div>
             <div id="estancoInfo">
                 {% if cliente.estanco %}
-                    <h2><span class="resalte">INFORMACION DEL ESTANCO</span></h2>
-                    <br>
-                    <p><span class="resalte"> - Nombre del estanco: </span> {{ cliente.estanco.nombre }}</p>
-                    <p><span class="resalte"> - Ubicacion del estanco: </span>{{ cliente.estanco.localizacion }}</p>
-                    <a href="{% url 'detalleEstancos' cliente.estanco.id %}">
-                        Mas informacion sobre el estanco
-                    </a>
+                    <p><span class="resalte">Es cliente de: </span> <a href="{% url 'detalleEstancos' cliente.estanco.id %}">{{ cliente.estanco.nombre }}</a></p>
                 {% else %}
                     <p>Este cliente no compra en ningun estanco.</p>
                 {% endif %}
