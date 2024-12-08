@@ -13,19 +13,20 @@
 
         <div id= "distribuidores">
             {% for distribuidor in distribuidor_list %}
+            <div id="cliente_miniInfo">
                 <ul>
                     <a href="{% url 'detalleDistribuidores' distribuidor.id %}">
                         <li id="distribuidor">
                             <img src="{{distribuidor.imagenDistr}}" alt="{{distribuidor.nombre}}" >
                             
                             <div id="texto">
-                                <h2 id="nombreDistribuidor">{{distribuidor.nombre}}</h2>
+                                <h2 class="nombreDistribuidor">{{distribuidor.nombre}}</h2>
                             </div>
-                    </li>
+                        </li>
                     </a>
                 </ul>
                 
-                   
+            </div>      
             {% endfor %}
         </div>
         {% endblock %}

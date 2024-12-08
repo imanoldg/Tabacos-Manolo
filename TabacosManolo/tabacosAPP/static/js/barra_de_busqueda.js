@@ -33,29 +33,7 @@ document.addEventListener("keyup", e=>{
             
         })
 
-        document.querySelectorAll("#distribuidor").forEach(ds =>{
 
-            console.log(ds.textContent)
-
-            if(ds.textContent.toLowerCase().includes(e.target.value.toLowerCase())){
-                ds.classList.remove("filtro")
-            } else{
-                ds.classList.add("filtro")
-            }
-            
-        })
-
-        document.querySelectorAll(".estanco").forEach(estanco =>{
-
-            console.log(estanco.textContent)
-
-            if(estanco.textContent.toLowerCase().includes(e.target.value.toLowerCase())){
-                estanco.classList.remove("filtro")
-            } else{
-                estanco.classList.add("filtro")
-            }
-            
-        })
     }
 
 
